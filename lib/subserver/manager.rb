@@ -147,7 +147,7 @@ module Subserver
 
       # Only included named classes that have included the Subscriber module
       subscribers = classes.select do |klass|
-        klass.name && klass < ::Subserver::Subscriber && options[:queues].include?(klass.subserver_options[:queue])
+        klass < ::Subserver::Subscriber && options[:queues].include?(klass.subserver_options[:queue])
       end
     end
 
